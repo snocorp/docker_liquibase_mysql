@@ -18,4 +18,6 @@ RUN \
   mkdir /opt/jdbc_drivers/ && \
   unzip mysql-connector-java-5.1.34.zip -d /opt/jdbc_drivers/
 
-ENTRYPOINT["/usr/local/bin/liquibase"]
+WORKDIR /
+
+ENTRYPOINT ["/bin/bash"]
