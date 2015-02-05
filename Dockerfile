@@ -25,6 +25,6 @@ VOLUME ["/changelogs"]
 
 WORKDIR /changelogs
 
-ENV LIQUIBASE_HOME=/opt/liquibase/
+ENV LIQUIBASE_HOME /opt/liquibase/
 
 ENTRYPOINT ["/bin/bash"]
