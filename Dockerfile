@@ -18,10 +18,13 @@ RUN \
   mkdir /opt/jdbc_drivers/ && \
   unzip mysql-connector-java-5.1.34.zip -d /opt/jdbc_drivers/ && \
   chmod +x /opt/jdbc_drivers/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar && \
-  ln -s /opt/jdbc_drivers/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /usr/local/bin/
+  mkdir /opt/liquibase/lib/ && \
+  ln -s /opt/jdbc_drivers/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /opt/liquibase/lib/
 
 VOLUME ["/changelogs"]
 
-WORKDIR /
+WORKDIR /changelogs
+
+ENV LIQUIBASE_HOME=/opt/liquibase/
 
 ENTRYPOINT ["/bin/bash"]
