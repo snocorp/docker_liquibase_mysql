@@ -16,7 +16,11 @@ RUN \
 RUN \
   curl -sfL -o mysql-connector-java-5.1.34.zip http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.34.zip && \
   mkdir /opt/jdbc_drivers/ && \
-  unzip mysql-connector-java-5.1.34.zip -d /opt/jdbc_drivers/
+  unzip mysql-connector-java-5.1.34.zip -d /opt/jdbc_drivers/ && \
+  chmod +x /opt/jdbc_drivers/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar && \
+  ln -s /opt/jdbc_drivers/mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar /usr/local/bin/
+
+VOLUME ["/changelogs"]
 
 WORKDIR /
 
