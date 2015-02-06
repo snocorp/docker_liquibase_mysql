@@ -27,4 +27,5 @@ WORKDIR /changelogs
 
 ENV LIQUIBASE_HOME /opt/liquibase/
 
-ENTRYPOINT ["/bin/bash"]
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
