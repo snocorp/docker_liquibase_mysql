@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/bin/bash -x
+
+if [ $1 = 'prompt' ]; then
+  exec /bin/sh
+fi
 
 liquibase --driver=com.mysql.jdbc.Driver \
      --changeLogFile=/changelogs/migrations.xml \
-     --url=jdbc:mysql://${MYSQL_PORT_3306_TCP_ADDR}:${MYSQL_PORT_3306_TCP_PORT}/asm \
-     --username=root \
-     --password=${MYSQL_ENV_MYSQL_ROOT_PASSWORD} \
+     $@ \
      update
