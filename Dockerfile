@@ -25,7 +25,7 @@ VOLUME ["/changelogs"]
 
 WORKDIR /changelogs
 
-ENV LIQUIBASE_HOME /opt/liquibase/
+ENV LIQUIBASE_HOME /opt/liquibase
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
