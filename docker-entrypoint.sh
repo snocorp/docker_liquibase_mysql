@@ -1,12 +1,12 @@
-#!/bin/bash -x
+#!/bin/bash -xe
 
 if [ "$1" = 'prompt' ]; then
   exec /bin/sh
 fi
 
 # if it looks like the user is passing options, treat it like so
-if [ "${1:0:1}" == '-' -o -z "${1}" ]; then
-  liquibase --driver=com.mysql.jdbc.Driver "$@"
+if [ "${1:0:1}" == '-' ]; then
+  exec liquibase --driver=com.mysql.jdbc.Driver "$@"
 fi
 
 # Use environment variables to determine how to invoke liquibase.  If the
@@ -27,7 +27,7 @@ if [ -z "${TARGET_DATABASE}" ]; then
     exit 1
 fi
 
-liquibase --driver=com.mysql.jdbc.Driver \
+exec liquibase --driver=com.mysql.jdbc.Driver \
      --changeLogFile=/changelogs/migrations.xml \
      --url="jdbc:mysql://$CLIENT_HOST:$CLIENT_PORT/$TARGET_DATABASE" \
      --username="${CLIENT_USER}" \
