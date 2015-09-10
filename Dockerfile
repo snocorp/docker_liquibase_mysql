@@ -6,7 +6,7 @@ RUN \
   yum -y install unzip java-1.7.0-openjdk
 
 RUN \
-  curl -sf -o liquibase-2.0.5-bin.zip -L http://downloads.sourceforge.net/project/liquibase/Liquibase%20Core/liquibase-2.0.5-bin.zip && \
+  curl -sf -o liquibase-2.0.5-bin.zip -L https://github.com/liquibase/liquibase/releases/download/liquibase-parent-2.0.5/liquibase-2.0.5-bin.zip && \
   mkdir /opt/liquibase && \
   unzip liquibase-2.0.5-bin.zip -d /opt/liquibase && \
   rm -f liquibase-2.0.5-bin.zip && \
