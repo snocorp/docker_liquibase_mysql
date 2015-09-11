@@ -1,5 +1,7 @@
 # Liquibase 2.0.5
 
+[![Docker Repository on Quay.io](https://quay.io/repository/freshbooks/liquibase-mysql/status "Docker Repository on Quay.io")](https://quay.io/repository/freshbooks/liquibase-mysql)
+
 ## Default Configuration
 
 Runs liquibase 2.0.5 with mysql connector
