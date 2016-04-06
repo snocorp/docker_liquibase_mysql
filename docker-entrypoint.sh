@@ -1,5 +1,9 @@
 #!/bin/bash -xe
 
+if [ ! -z "$WORKING_DIR" ]; then
+    cd $WORKING_DIR
+fi
+
 if [ "$1" = 'prompt' ]; then
   exec /bin/sh
 fi
