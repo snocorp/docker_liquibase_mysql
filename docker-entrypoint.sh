@@ -1,16 +1,7 @@
 #!/bin/bash -xe
 
-if [ ! -z "$WORKING_DIR" ]; then
-    cd $WORKING_DIR
-fi
-
 if [ "$1" = 'prompt' ]; then
   exec /bin/sh
-fi
-
-# if it looks like the user is passing options, treat it like so
-if [ "${1:0:1}" == '-' ]; then
-  exec liquibase --driver=com.mysql.jdbc.Driver "$@"
 fi
 
 # Use environment variables to determine how to invoke liquibase.  If the
@@ -31,10 +22,10 @@ if [ -z "${TARGET_DATABASE}" ]; then
     exit 1
 fi
 
+default_changelog_file=migrations.xml
 exec liquibase --driver=com.mysql.jdbc.Driver \
-     --changeLogFile=/changelogs/migrations.xml \
+     --changeLogFile=/changelogs/${CHANGELOG_FILE:-$default_changelog_file} \
      --url="jdbc:mysql://$CLIENT_HOST:$CLIENT_PORT/$TARGET_DATABASE" \
      --username="${CLIENT_USER}" \
      "$CLIENT_PASS" \
-     "$@" \
-     update
+     $1
