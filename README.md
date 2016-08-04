@@ -1,6 +1,5 @@
-# Liquibase 2.0.5
+# Liquibase 3.5.1
 
-[![Docker Repository on Quay.io](https://quay.io/repository/freshbooks/liquibase-mysql/status "Docker Repository on Quay.io")](https://quay.io/repository/freshbooks/liquibase-mysql)
 [![License][license]][license-url]
 
 [license-url]: http://choosealicense.com/licenses/isc/
@@ -8,7 +7,7 @@
 
 ## Default Configuration
 
-Runs liquibase 2.0.5 with mysql connector
+Runs liquibase 3.5.1 with mysql connector
 
 ## Usage
 
@@ -27,7 +26,7 @@ docker run -it \
   --rm \
   -v /local/path/migrations:/changelogs \
   -e TARGET_DATABASE=foo \
-  freshbooks/liquibase-mysql:2.0.5
+  snocorp/liquibase-mysql:3.5.1
 ```
 
 
@@ -40,23 +39,4 @@ docker run -it \
 * `MYSQL_USER`
 * `MYSQL_PASSWORD`
 * `TARGET_DATABASE`
-
-
-### Specifying your own commandline options
-
-You may also invoke liquibase with whatever options or command you like.
-`--driver=com.mysql.jbc.Driver` is already specified.
-
-```
-docker run -it \
-  --rm \
-  -v /local/path/migrations:/changelogs \
-  freshbooks/liquibase_mysql:2.0.5 \
-   --changeLogFile=/changelogs/migrations.xml \
-   --username=foo
-   --password=bar
-   --url="jbc:mysql://baz:3306/my_table
-   update
-```
-
-
+* `CHANGELOG_FILE` (default: `migrations.xml`)
