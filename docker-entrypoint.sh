@@ -28,4 +28,4 @@ exec liquibase --driver=com.mysql.jdbc.Driver \
      --url="jdbc:mysql://$CLIENT_HOST:$CLIENT_PORT/$TARGET_DATABASE" \
      --username="${CLIENT_USER}" \
      "$CLIENT_PASS" \
-     $1
+     $@
