@@ -1,6 +1,10 @@
 # Liquibase 2.0.5
 
 [![Docker Repository on Quay.io](https://quay.io/repository/freshbooks/liquibase-mysql/status "Docker Repository on Quay.io")](https://quay.io/repository/freshbooks/liquibase-mysql)
+[![License][license]][license-url]
+
+[license-url]: http://choosealicense.com/licenses/isc/
+[license]: https://img.shields.io/npm/l/simon-promise.svg?style=flat-square
 
 ## Default Configuration
 
@@ -54,3 +58,5 @@ docker run -it \
    --url="jbc:mysql://baz:3306/my_table
    update
 ```
+
+
