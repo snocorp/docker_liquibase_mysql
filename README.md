@@ -1,4 +1,4 @@
-# Liquibase 3.5.1
+# Liquibase 3.5.3
 
 [![License][license]][license-url]
 
@@ -7,7 +7,7 @@
 
 ## Default Configuration
 
-Runs liquibase 3.5.1 with mysql connector
+Runs liquibase 3.5.3 with mysql connector
 
 ## Usage
 
@@ -26,7 +26,7 @@ docker run -it \
   --rm \
   -v /local/path/migrations:/changelogs \
   -e TARGET_DATABASE=foo \
-  snocorp/liquibase-mysql:3.5.1
+  snocorp/liquibase-mysql:3.5.3
 ```
 
 
